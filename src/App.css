@@ -1,32 +1,42 @@
 html {
   scroll-behavior: smooth;
 }
+
 body {
   background: #151515;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
 .container {
   display: flex;
   flex-direction: column;
 }
+
 .edit-container {
   width: 40%;
 }
-.edit-container > * {
+
+.edit-container>* {
   padding: 1vh;
 }
-.edit-image, .edit-desc, .edit-keywords, .edit-url {
+
+.edit-image,
+.edit-desc,
+.edit-keywords,
+.edit-url {
   display: flex;
   flex-direction: column;
 }
-.edit-image > div {
+
+.edit-image>div {
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.edit-image > img {
+
+.edit-image>img {
   max-height: 30vh;
   object-fit: cover;
   width: 95%;
@@ -35,11 +45,14 @@ body {
   z-index: 1;
   filter: brightness(.3);
 }
+
 label {
   color: gray;
   margin: 1vh 1vh;
 }
-input, textarea {
+
+input,
+textarea {
   resize: none;
   color: white;
   font-size: 17px;
@@ -50,15 +63,19 @@ input, textarea {
   transition: all .3s;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-input:focus, textarea:focus {
-  outline:none;
+
+input:focus,
+textarea:focus {
+  outline: none;
   box-shadow: 0 0 5px gray;
 }
+
 .edit-title {
   display: flex;
   flex-direction: column;
 }
-.edit-container > button {
+
+.edit-container>button {
   text-align: center;
   width: 95%;
   padding: 1vh 0vh;
@@ -73,9 +90,11 @@ input:focus, textarea:focus {
   cursor: pointer;
   transition: all .3s;
 }
-.edit-container > button:is(:active, :hover){
+
+.edit-container>button:is(:active, :hover) {
   box-shadow: 0 0 1vh gray;
 }
+
 .modal {
   top: 0;
   bottom: 0;
@@ -92,14 +111,17 @@ input:focus, textarea:focus {
   z-index: 99;
   color: white;
 }
-.modal > h1 {
+
+.modal>h1 {
   cursor: pointer;
   position: absolute;
   top: 0;
   right: 0;
   margin: 2vh 5vh;
 }
-.edit-keywords > div > span, .keywords-input > input {
+
+.edit-keywords>div>span,
+.keywords-input>input {
   background: #101010;
   color: #707070;
   border: 2px solid #707070;
@@ -108,34 +130,62 @@ input:focus, textarea:focus {
   margin: 0 .5vh;
   width: fit-content;
 }
+
+.edit-keywords>div>p {
+  color: red;
+  font-size: 12px;
+  margin: 0;
+  cursor: pointer;
+  text-shadow: 0 0 1px red;
+}
+
 .edit-keywords {
   display: flex;
   flex-direction: column;
 }
-.edit-keywords > div {
+
+.edit-keywords>div {
+  align-items: center;
   gap: 1vh 0;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
 }
+
 .keywords-input {
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
-.edit-container > h1, .preview-container > h1 {
+
+.edit-container>h1,
+.preview-container>h1 {
   margin: 0;
   color: white;
   font-weight: 500;
   font-size: large;
+  align-self: flex-start;
 }
+
 .preview-container {
   width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
+
 .nav {
   margin: 0 4vh;
   color: skyblue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
+
+.nav>h2 {
+  cursor: pointer;
+}
+
 .main-content {
   display: flex;
   flex-direction: column;
@@ -147,9 +197,11 @@ input:focus, textarea:focus {
   text-align: center;
   color: white;
 }
-.main-content > h1 {
+
+.main-content>h1 {
   font-weight: 300;
 }
+
 #start {
   display: flex;
   flex-direction: row;
@@ -157,7 +209,8 @@ input:focus, textarea:focus {
   gap: 10%;
   margin: 0 10%;
 }
-.main-content > h3 {
+
+.main-content>h3 {
   font-weight: 500;
   cursor: pointer;
   transition: all .3s;
@@ -167,15 +220,276 @@ input:focus, textarea:focus {
   border-radius: 1vh;
   color: grey;
 }
-.main-content > h3:is(:hover, :active) {
+
+.main-content>h3:is(:hover, :active) {
   border: 1px solid white;
   color: white;
   border-radius: 1vh;
   background-color: #00000066;
 }
-.main-content > h1 > font {
+
+.main-content>h1>font {
   background: linear-gradient(30deg, #0d00e6, #1fc2ff);
   background-clip: text;
   -webkit-text-fill-color: transparent;
   display: ruby;
+}
+
+.google>div>* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.preview-container>* {
+  padding: 1vh;
+}
+
+.google>div>h2 {
+  display: block;
+  letter-spacing: normal;
+  color: #1a0dab;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+::selection {
+  color: #fff;
+  background: #18283e;
+}
+
+.google>div>h3 {
+  position: relative;
+  top: -2px;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: normal;
+  color: #006621;
+}
+
+.google>div>p {
+  color: #545454;
+  font-size: 13px;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.google,
+.twitter,
+.instagram,
+.facebook {
+  display: flex;
+  flex-direction: column;
+}
+
+.twitter>div {
+  width: min-content;
+  cursor: pointer;
+  position: relative;
+  display: block;
+  background-color: #fff;
+  border-radius: 14px;
+  border: 1px solid #e1e8ed;
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Ubuntu, Helvetica Neue, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color .15s ease-in-out, border-color .15s ease-in-out;
+}
+
+.twitter>div>img {
+  height: 25vh;
+  width: auto;
+  border-radius: 2vh 2vh 0vh 0vh;
+  overflow: hidden;
+}
+
+.twitter>div>div {
+  padding: 1vh 1vh 1vh 2vh;
+}
+
+.twitter>div>div>h2 {
+  display: block;
+  margin: 0 0 .15em;
+  font-size: 14px;
+  line-height: 18.375px;
+  letter-spacing: normal;
+  overflow: hidden;
+}
+
+.twitter>div>div>h3 {
+  height: 2.6em;
+  font-weight: 400;
+  font-size: 13px;
+  display: -webkit-box;
+  max-height: 2.6em;
+  margin-top: .32333em;
+  line-height: 1.3em;
+  letter-spacing: normal;
+  word-wrap: break-word;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+
+.twitter>div>div>p {
+  color: #657786;
+  margin: 0;
+  text-transform: lowercase;
+  line-height: 1.3125;
+  letter-spacing: normal;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.facebook>div {
+  box-sizing: border-box;
+  width: min-content;
+  cursor: pointer;
+  position: relative;
+  display: block;
+  background-color: #fff;
+  overflow: hidden;
+  font-size: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, \.SFNSText-Regular, sans-serif;
+}
+
+.facebook>div>div {
+  padding: 10px 12px;
+  color: #1d2129;
+  border-bottom: 1px solid #dadde1;
+  background: #f2f3f5;
+}
+
+.facebook>div>img {
+  height: 25vh;
+}
+
+.facebook>div>div>p {
+  border-collapse: separate;
+  color: #606770;
+  font-family: Helvetica, Arial, sans-serif;
+  overflow: hidden;
+  text-align: left;
+  text-overflow: ellipsis;
+  user-select: none;
+  word-wrap: break-word;
+  font-size: 12px;
+  height: 11px;
+  line-height: 11px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.facebook h2 {
+  margin: 0;
+  border-collapse: separate;
+  color: #1d2129;
+  cursor: pointer;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  height: auto;
+  letter-spacing: normal;
+  line-height: 18px;
+  text-align: left;
+  text-decoration-color: #1d2129;
+  text-decoration-line: none;
+  text-decoration-style: solid;
+  user-select: none;
+  white-space: normal;
+  width: auto;
+  word-wrap: break-word;
+}
+
+.facebook h3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  border-collapse: separate;
+  color: #606770;
+  font-weight: 400;
+  margin: 1vh 0;
+  height: 4.5vh;
+  font-size: 13px;
+  line-height: 1.2em;
+  letter-spacing: normal;
+  text-overflow: ellipsis;
+  font-family: Helvetica, Arial, sans-serif;
+  overflow: hidden;
+  text-align: left;
+  user-select: none;
+  word-wrap: break-word;
+}
+
+.instagram>div>img {
+  height: 25vh;
+  border-radius: 2vh 2vh 0vh 0vh;
+}
+
+.instagram>div {
+  background: #e0e0e0;
+  width: min-content;
+  border-radius: 2vh;
+}
+.instagram > div > div {
+  padding: 0 1vh;
+  display: flex;
+  gap: 1vh;
+  margin: 1vh 1Vh 1Vh 1Vh;
+  flex-direction: column;
+  align-items: flex-start;
+  height: -webkit-fill-available;
+}
+.instagram>div>div>*{
+  margin: 0;
+}
+.instagram > div > div > h5 {
+  max-height: 5vh;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 44vh;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.instagram > div > div > p {
+  color: dimgray;
+  font-size: smaller;
+  display: flex;
+  align-items: center;
+}
+footer {
+  text-align: center;
+  color: white;
+  margin-top: 5vh;
+}
+.instagram p > img {
+  width: 4vh;
+  filter: contrast(0.2);
+}
+@media only screen and (hover: none) and (pointer: coarse) { /* MOBILE DEVICE DETECT */
+  #start {
+    flex-direction: column;
+  }
+  .edit-container, .preview-container {
+    width: 100%;
+  }
+  .preview-container > div img {
+    width: 70vw;
+    height: 100%;
+  }
+  .instagram > div > div > p > img {
+    width: 3vh;
+  }
+  .instagram > div > div  {
+    width: 0;
+  }
 }

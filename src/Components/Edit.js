@@ -4,12 +4,12 @@ import Modal from './Modal'
 export default function Edit() {
     const [imgUrl, setImgUrl] = useState('https://socialify.git.ci/m2ncef/OGify/image?description=0&font=Inter&language=1&name=1&owner=1&theme=Dark')
     const [title, setTitle] = useState("OGify")
-    const [desc, setDesc] = useState("Description")
-    const [url, setURL] = useState("ogify.vercel.app")
+    const [desc, setDesc] = useState("With OGify, add some flair to your content and see how it pops on Google, Facebook, Twitter, and beyond! ✨🚀")
+    const [url, setURL] = useState("https://ogify.vercel.app")
     const [data, setData] = useState([])
     const [modal, setModal] = useState(false)
     const [keyword, setKeyword] = useState("")
-    const [allKeywords, addToKeywords] = useState([])
+    const [allKeywords, addToKeywords] = useState(["free", "meta", "tag", "meta tag", "meta tag generator", "OGify", "OG tags", "OG Meta tags"])
     const [keywordsInput, setKeywordsInput] = useState(false)
     const imgRef = useRef()
     const handleImageError = () => {
@@ -46,23 +46,26 @@ export default function Edit() {
             {modal && <Modal setModal={setModal} data={data} />}
             <div className='edit-image'>
                 <label>Image</label>
-                <input type='url' onChange={imgHandler} placeholder='Cover link | 1200x628 recommended.'></input>
+                <input defaultValue={imgUrl} type='url' onChange={imgHandler} placeholder='Cover link | 1200x628 recommended.'></input>
                 <img ref={imgRef} src={imgUrl} onError={handleImageError} alt="Website's Cover" />
             </div>
             <div className='edit-title'>
                 <label>Title</label>
-                <input placeholder='Write your title here' onChange={(e) => { setTitle(e.target.value) }}></input>
+                <input defaultValue={title} placeholder='Write your title here' onChange={(e) => { setTitle(e.target.value) }}></input>
             </div>
             <div className='edit-url'>
                 <label>Website Link</label>
-                <input placeholder='Write your URL here' onChange={(e) => { setURL(e.target.value) }}></input>
+                <input defaultValue={url} placeholder='Write your URL here' onChange={(e) => { setURL(e.target.value) }}></input>
             </div>
             <div className='edit-desc'>
                 <label>Description</label>
-                <textarea rows={4} placeholder='Write your description here' onChange={(e) => { setDesc(e.target.value) }}></textarea>
+                <textarea defaultValue={desc} rows={4} placeholder='Write your description here' onChange={(e) => { setDesc(e.target.value) }}></textarea>
             </div>
             <div className='edit-keywords'>
-                <label>Keywords</label>
+                <div>
+                    <label>Keywords</label>
+                    <p onClick={()=>addToKeywords([])}>Clear</p>
+                </div>
                 <div>
                     {allKeywords.map(keyword => {
                         return <span style={{ border: '2px solid #bababa', color: '#bababa' }}>{keyword}</span>
