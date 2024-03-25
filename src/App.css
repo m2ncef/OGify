@@ -1,10 +1,13 @@
+html {
+  scroll-behavior: smooth;
+}
 body {
   background: #151515;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 .edit-container {
   width: 30%;
@@ -124,4 +127,49 @@ input:focus, textarea:focus {
   color: white;
   font-weight: 500;
   font-size: large;
+}
+.nav {
+  margin: 0 4vh;
+  color: skyblue;
+}
+.main-content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  margin: 15vh 24%;
+  text-align: center;
+  color: white;
+  gap: 3Vh;
+}
+.main-content > h1 {
+  font-weight: 300;
+}
+.main-content > div > h3 {
+  font-weight: 500;
+  cursor: pointer;
+  transition: all .3s;
+  padding: 1vh 3vh;
+  border: 1px solid transparent;
+}
+.main-content > div > h3:is(:hover, :active) {
+  border-right: 1px solid white;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  border-top-right-radius: 1vh;
+  border-bottom-right-radius: 1vh;
+  background-color: #00000066;
+}
+.main-content > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.main-content > h1 > font {
+  background: linear-gradient(30deg, #0d00e6, #1fc2ff);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: ruby;
 }

@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import Modal from './Modal'
 
-export default function Edit() {
+export default function Edit({ urlRef }) {
     const [imgUrl, setImgUrl] = useState('https://socialify.git.ci/m2ncef/OGify/image?description=0&font=Inter&language=1&name=1&owner=1&theme=Dark')
     const [title, setTitle] = useState("OGify")
     const [desc, setDesc] = useState("Description")
@@ -36,7 +36,7 @@ export default function Edit() {
             'title': title,
             'desc': desc,
             'keywords': allKeywords.join(", "),
-            'url': 'hhh.hhh.com'
+            'url': urlRef.current.value
         })
     }
     return (
