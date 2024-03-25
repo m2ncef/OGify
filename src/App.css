@@ -10,12 +10,12 @@ body {
   flex-direction: column;
 }
 .edit-container {
-  width: 30%;
+  width: 40%;
 }
 .edit-container > * {
   padding: 1vh;
 }
-.edit-image, .edit-desc, .edit-keywords {
+.edit-image, .edit-desc, .edit-keywords, .edit-url {
   display: flex;
   flex-direction: column;
 }
@@ -40,6 +40,7 @@ label {
   margin: 1vh 1vh;
 }
 input, textarea {
+  resize: none;
   color: white;
   font-size: 17px;
   border: 1px solid gray;
@@ -122,11 +123,14 @@ input:focus, textarea:focus {
   justify-content: flex-end;
   align-items: center;
 }
-.edit-container > h1 {
+.edit-container > h1, .preview-container > h1 {
   margin: 0;
   color: white;
   font-weight: 500;
   font-size: large;
+}
+.preview-container {
+  width: 60%;
 }
 .nav {
   margin: 0 4vh;
@@ -139,33 +143,35 @@ input:focus, textarea:focus {
   align-content: center;
   justify-content: center;
   align-items: center;
-  margin: 15vh 24%;
+  margin: 15% 25%;
   text-align: center;
   color: white;
-  gap: 3Vh;
 }
 .main-content > h1 {
   font-weight: 300;
 }
-.main-content > div > h3 {
+#start {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 10%;
+  margin: 0 10%;
+}
+.main-content > h3 {
   font-weight: 500;
   cursor: pointer;
   transition: all .3s;
   padding: 1vh 3vh;
+  font-size: 4vh;
   border: 1px solid transparent;
+  border-radius: 1vh;
+  color: grey;
 }
-.main-content > div > h3:is(:hover, :active) {
-  border-right: 1px solid white;
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
-  border-top-right-radius: 1vh;
-  border-bottom-right-radius: 1vh;
+.main-content > h3:is(:hover, :active) {
+  border: 1px solid white;
+  color: white;
+  border-radius: 1vh;
   background-color: #00000066;
-}
-.main-content > div {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
 }
 .main-content > h1 > font {
   background: linear-gradient(30deg, #0d00e6, #1fc2ff);
