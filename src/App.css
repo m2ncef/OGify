@@ -433,6 +433,14 @@ textarea:focus {
   border-radius: 2vh 2vh 0vh 0vh;
 }
 
+.google > div {
+  margin: 3vh 0vh;
+  background: white;
+  padding: 1vh;
+  border-radius: 1vh;
+  width: fit-content;
+}
+
 .instagram>div {
   border: 1px solid white;
   background: #e0e0e0;
