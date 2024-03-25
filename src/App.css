@@ -1,38 +1,127 @@
-.App {
-  text-align: center;
+body {
+  background: #151515;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  display: flex;
+  flex-direction: row;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.edit-container {
+  width: 30%;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.edit-container > * {
+  padding: 1vh;
+}
+.edit-image, .edit-desc, .edit-keywords {
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+.edit-image > div {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+.edit-image > img {
+  max-height: 30vh;
+  object-fit: cover;
+  width: 95%;
+  border-radius: 1vh;
+  margin: 3vh auto;
+  z-index: 1;
+  filter: brightness(.3);
+}
+label {
+  color: gray;
+  margin: 1vh 1vh;
+}
+input, textarea {
+  color: white;
+  font-size: 17px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: 1vh 1vh;
+  background-color: #151515;
+  transition: all .3s;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+input:focus, textarea:focus {
+  outline:none;
+  box-shadow: 0 0 5px gray;
+}
+.edit-title {
+  display: flex;
+  flex-direction: column;
+}
+.edit-container > button {
+  text-align: center;
+  width: 95%;
+  padding: 1vh 0vh;
+  margin: 2vh auto;
+  display: block;
+  border: 2px solid gray;
+  border-radius: 1vh;
+  background: #FFFFFF15;
+  color: white;
+  font-weight: 400;
+  font-size: medium;
+  cursor: pointer;
+  transition: all .3s;
+}
+.edit-container > button:is(:active, :hover){
+  box-shadow: 0 0 1vh gray;
+}
+.modal {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0;
+  position: fixed;
+  height: 100%;
+  width: -webkit-fill-available;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(1vh) brightness(.4);
+  z-index: 99;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.modal > h1 {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 2vh 5vh;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.edit-keywords > div > span, .keywords-input > input {
+  background: #101010;
+  color: #707070;
+  border: 2px solid #707070;
+  padding: 1vh 1.5vh;
+  border-radius: 2vh;
+  margin: 0 .5vh;
+  width: fit-content;
+}
+.edit-keywords {
+  display: flex;
+  flex-direction: column;
+}
+.edit-keywords > div {
+  gap: 1vh 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.keywords-input {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.edit-container > h1 {
+  margin: 0;
+  color: white;
+  font-weight: 500;
+  font-size: large;
 }
