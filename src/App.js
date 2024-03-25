@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 import Edit from './Components/Edit';
 import Preview from './Components/Preview';

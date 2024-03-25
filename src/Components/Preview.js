@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function Preview() {
-  const [title, url, desc, image] = ['Meta Tags — Preview, Edit and Generate', 'https://dickriders.com', 'With Meta Tags you can edit and experiment with your content then preview how your webpage will look on Google, Facebook, Twitter and more!', 'https://metatags.io/images/meta-tags.png']
+  const [title, url, desc, image] = ['OGify', 'https://ogify.vercel.app', 'With OGify, add some flair to your content and see how it pops on Google, Facebook, Twitter, and beyond! ✨🚀', 'https://socialify.git.ci/m2ncef/OGify/image?description=0&font=Inter&language=1&name=1&owner=1&theme=Dark']
   return (
     <div className='preview-container'>
       <h1>Preview</h1>

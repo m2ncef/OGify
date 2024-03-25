@@ -193,7 +193,7 @@ textarea:focus {
   align-content: center;
   justify-content: center;
   align-items: center;
-  margin: 15% 25%;
+  margin: 15%;
   text-align: center;
   color: white;
 }
@@ -323,7 +323,6 @@ textarea:focus {
 }
 
 .twitter>div>div>h3 {
-  height: 2.6em;
   font-weight: 400;
   font-size: 13px;
   display: -webkit-box;
@@ -350,6 +349,7 @@ textarea:focus {
 }
 
 .facebook>div {
+  border: 1px solid white;
   box-sizing: border-box;
   width: min-content;
   cursor: pointer;
@@ -417,7 +417,6 @@ textarea:focus {
   color: #606770;
   font-weight: 400;
   margin: 1vh 0;
-  height: 4.5vh;
   font-size: 13px;
   line-height: 1.2em;
   letter-spacing: normal;
@@ -435,6 +434,7 @@ textarea:focus {
 }
 
 .instagram>div {
+  border: 1px solid white;
   background: #e0e0e0;
   width: min-content;
   border-radius: 2vh;
@@ -455,10 +455,14 @@ textarea:focus {
   max-height: 5vh;
   overflow: hidden;
   text-overflow: ellipsis;
-  width: 44vh;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+  width: auto;
+  margin: 0 0 .15em;
+  font-size: 14px;
+  line-height: 18.375px;
+  letter-spacing: normal;
 }
 .instagram > div > div > p {
   color: dimgray;
@@ -490,6 +494,6 @@ footer {
     width: 3vh;
   }
   .instagram > div > div  {
-    width: 0;
+    height: min-content;
   }
 }
