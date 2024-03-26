@@ -6,7 +6,7 @@ export default function Modal({ data, setModal }) {
 <meta name="title" content="${data.title}" />
 <meta name="description" content="${data.desc}">
 <meta name="keywords" content="${data.keywords}">
-<!-- Open Graph / Meta (Facebook / Instagram / Whatsapp) -->
+<!-- Open Graph / Meta (Facebook, Instagram, ...) -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content="${data.url}" />
 <meta property="og:title" content="${data.title}" />

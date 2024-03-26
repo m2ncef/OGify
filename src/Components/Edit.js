@@ -1,5 +1,6 @@
-import React, { useRef, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import Modal from './Modal'
+import { WebDataContext } from '../App'
 
 export default function Edit() {
     const [imgUrl, setImgUrl] = useState('https://socialify.git.ci/m2ncef/OGify/image?description=0&font=Inter&language=1&name=1&owner=1&theme=Dark')
@@ -11,6 +12,7 @@ export default function Edit() {
     const [keyword, setKeyword] = useState("")
     const [allKeywords, addToKeywords] = useState(["free", "meta", "tag", "meta tag", "meta tag generator", "OGify", "OG tags", "OG Meta tags"])
     const [keywordsInput, setKeywordsInput] = useState(false)
+    const { setWebData } = useContext(WebDataContext)
     const imgRef = useRef()
     const handleImageError = () => {
         setImgUrl('https://socialify.git.ci/m2ncef/OGify/image?description=0&font=Inter&language=1&name=1&owner=1&theme=Dark')
@@ -30,6 +32,15 @@ export default function Edit() {
         addToKeywords([...allKeywords, keyword])
         setKeyword("")
     }
+    useEffect(() => {
+        setWebData({
+            'image': imgUrl,
+            'title': title,
+            'desc': desc,
+            'url': url
+        })
+        // eslint-disable-next-line
+    }, [imgUrl, title, desc, url])
     const getCode = () => {
         setModal(true)
         setData({
@@ -47,7 +58,7 @@ export default function Edit() {
             <div className='edit-image'>
                 <label>Image</label>
                 <input defaultValue={imgUrl} type='url' onChange={imgHandler} placeholder='Cover link | 1200x628 recommended.'></input>
-                <img ref={imgRef} src={imgUrl} onError={handleImageError} alt="Website's Cover" />
+                <img alt="" ref={imgRef} src={imgUrl} onError={handleImageError}/>
             </div>
             <div className='edit-title'>
                 <label>Title</label>
@@ -64,11 +75,11 @@ export default function Edit() {
             <div className='edit-keywords'>
                 <div>
                     <label>Keywords</label>
-                    <p onClick={()=>addToKeywords([])}>Clear</p>
+                    <p onClick={() => addToKeywords([])}>Clear</p>
                 </div>
                 <div>
-                    {allKeywords.map(keyword => {
-                        return <span style={{ border: '2px solid #bababa', color: '#bababa' }}>{keyword}</span>
+                    {allKeywords.map((keyword, index) => {
+                        return <span key={index} style={{ border: '2px solid #bababa', color: '#bababa' }}>{keyword}</span>
                     })}
                     {keywordsInput && (
                         <div className='keywords-input'>
@@ -76,7 +87,7 @@ export default function Edit() {
                             <p onClick={addKeyword} style={{ position: 'absolute', margin: '0 2vh' }}>✅</p>
                         </div>
                     )}
-                    {!keywordsInput && <span onClick={handleKeywords} style={{ cursor: 'pointer' }}>+ Keyword</span>}
+                    {!keywordsInput && <span onClick={handleKeywords} style={{ cursor: 'pointer', boxShadow: '0 0 1px white'}}>+ Add Keyword</span>}
                 </div>
             </div>
             <button onClick={getCode}>Get Code</button>

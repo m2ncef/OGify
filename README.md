@@ -1,4 +1,3 @@
-## WEBSITE UNDER DEVELOPEMENT
 # Welcome to OGify! 🚀
 
 OGify is a handy website built with React.js that helps you generate meta tags to enhance your website's SEO (Search Engine Optimization). With OGify, you can easily create meta tags, including Open Graph tags, which are crucial for improving the visibility and appearance of your website on social media platforms and search engine results pages.
