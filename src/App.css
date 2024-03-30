@@ -263,7 +263,7 @@ textarea:focus {
 
 ::selection {
   color: #fff;
-  background: #18283e;
+  background: blue;
 }
 
 .google>div>h3 {
