@@ -3,7 +3,7 @@ import Modal from './Modal'
 import { WebDataContext } from '../App'
 
 export default function Edit() {
-    const [imgUrl, setImgUrl] = useState('https://socialify.git.ci/m2ncef/OGify/image?description=0&font=Inter&language=1&name=1&owner=1&theme=Dark')
+    const [imgUrl, setImgUrl] = useState('https://placehold.co/600x400/151515/skyblue?font=montserrat&text=Image%20not%20available\ntry%20changing%20your%20URL.\nOGify')
     const [title, setTitle] = useState("OGify")
     const [desc, setDesc] = useState("With OGify, add some flair to your content and see how it pops on Google, Facebook, Twitter, and beyond! ✨🚀")
     const [url, setURL] = useState("https://ogify.vercel.app")
@@ -19,7 +19,7 @@ export default function Edit() {
     }
     const imgHandler = (e) => {
         setImgUrl(e.target.value)
-        imgRef.current.style.webkitFilter = "blur(.5vh) brightness(0.5)";
+        imgRef.current.style.webkitFilter = "blur(2vh) brightness(0.2)";
         setTimeout(() => {
             imgRef.current.style.webkitFilter = "none";
         }, 1500);
@@ -39,7 +39,6 @@ export default function Edit() {
             'desc': desc,
             'url': url
         })
-        // eslint-disable-next-line
     }, [imgUrl, title, desc, url])
     const getCode = () => {
         setModal(true)

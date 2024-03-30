@@ -2,32 +2,6 @@ html {
   scroll-behavior: smooth;
 }
 
-body.light {
-  background-color: #F0F0F0;
-}
-.light .main-content {
-  color: black;
-}
-.light .edit-container > h1,.light .preview-container > h1 {
-  color: #151515;
-}
-.light input, .light textarea {
-  background-color: #f9f9f9;
-  color: #151515;
-  border: 1px solid #D0D0D0;
-}
-.light footer {
-  color: black;
-}
-.light .edit-keywords>div>span {
-  background: #15151522 !important;
-  color: #151515AA !important;
-}
-.light .edit-container>button{
-  border: 2px solid #D0D0D0;
-  color: #151515;
-  background: #15151511;
-}
 body {
   transition: all .3s;
   background: #151515;
@@ -533,4 +507,31 @@ footer {
   .instagram > div > div  {
     height: min-content;
   }
+}
+/* LIGHT THEME */
+body.light {
+  background-color: #F0F0F0;
+}
+.light .main-content {
+  color: black;
+}
+.light .edit-container > h1,.light .preview-container > h1 {
+  color: #151515;
+}
+.light input, .light textarea {
+  background-color: #f9f9f9;
+  color: #151515;
+  border: 1px solid #D0D0D0;
+}
+.light footer {
+  color: black;
+}
+.light .edit-keywords>div>span {
+  background: #15151522 !important;
+  color: #151515AA !important;
+}
+.light .edit-container>button{
+  border: 2px solid #D0D0D0;
+  color: #151515;
+  background: #15151511;
 }
