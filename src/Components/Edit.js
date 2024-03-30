@@ -3,7 +3,7 @@ import Modal from './Modal'
 import { WebDataContext } from '../App'
 
 export default function Edit() {
-    const [imgUrl, setImgUrl] = useState('https://placehold.co/600x400/151515/skyblue?font=montserrat&text=Image%20not%20available.')
+    const [imgUrl, setImgUrl] = useState('https://socialify.git.ci/m2ncef/OGify/image?description=0&font=Inter&language=1&name=1&owner=1&theme=Dark')
     const [title, setTitle] = useState("OGify")
     const [desc, setDesc] = useState("With OGify, add some flair to your content and see how it pops on Google, Facebook, Twitter, and beyond! ✨🚀")
     const [url, setURL] = useState("https://ogify.vercel.app")
@@ -15,7 +15,7 @@ export default function Edit() {
     const { setWebData } = useContext(WebDataContext)
     const imgRef = useRef()
     const handleImageError = () => {
-        setImgUrl('https://socialify.git.ci/m2ncef/OGify/image?description=0&font=Inter&language=1&name=1&owner=1&theme=Dark')
+      setImgUrl('https://placehold.co/600x400/151515/skyblue?font=montserrat&text=Image%20not%20available.')
     }
     const imgHandler = (e) => {
         setImgUrl(e.target.value)
